@@ -58,16 +58,16 @@ In a test method, the framework should look like this:
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-public class MyMathMethodTest {
+public class MyMathTest {
 
     @Test
     public void shouldReturnSum_whenAddingTwoNumbers() {
-        assertEquals(5, MathUtility.add(2, 3));
+        assertEquals(5, MyMath.add(2, 3));
     }
 }
 ```
 - `import` statements: Imports all static methods from the `Assertions` class in JUnit, allowing you to use assertion methods like `assertEquals`, `assertTrue`, `assertFalse`, etc. Also imports the `@Test` annotation, used in your code to mark methods as test cases.
-- `public class MyMathMethodTest`: This defines the test class `MyMathMethodTest`. By convention, test class names often mirror the class being tested, but with the suffix `Test`. For example, if the class under test is `MyMathMethod.java`, the corresponding test class is often named `MyMathMethodTest.java`.
+- `public class MyMathTest`: This defines the test class `MyMathTest`. By convention, test class names often mirror the class being tested, but with the suffix `Test`. For example, if the class under test is `MyMath.java`, the corresponding test class is often named `MyMathTest.java`.
 - `@Test`: Tells JUnit this method is a test case.
 - `public void shouldReturnSum_whenAddingTwoNumbers()`: Descriptive method name incorporating what the method under test is supposed to do, and the condition under which the test is being executed. This makes the test more readable and self-documenting.
 - `assertEquals(expected, actual)`: This assertion method checks whether the two arguments (`expected` and `actual`) are equal. If they are not, the test fails.
@@ -79,30 +79,30 @@ When properly set up with the recommended extensions (including Test Runner for 
 
 Run the tests directly within the IDE, or command line equivalent such as:
 
-#### Compiling the main class (`MyMathMethod.java`)
+#### Compiling the main class
 ```
-javac -d bin src/packagename/MyMathMethod.java 
+javac -d bin src/packagename/MyMath.java 
 ```
 - `-d bin`: This specifies the output directory for the compiled class files. In this case, the compiled .class file will be placed in the bin/ folder, preserving the package structure.
-- `src/packagename/MyMathMethod.java`: This is the source file you are compiling.
+- `src/packagename/MyMath.java`: This is the source file you are compiling.
 
 
-#### Compiling the test class (`MyMathMethodTest.java`):
+#### Compiling the test class
 ```
-javac -d bin -sourcepath src -classpath lib/junit-platform-console-standalone-1.7.0-M1.jar src/packagename/MyMathMethodTest.java
+javac -d bin -sourcepath src -classpath lib/junit-platform-console-standalone-1.7.0-M1.jar src/packagename/MyMathTest.java
 ```
 - `-d bin`: Specifies that the compiled test class should be placed in the bin/ folder.
 - `-sourcepath src`: Specifies the directory where your source files are located.
 - `-classpath lib/junit-platform-console-standalone-1.7.0-M1.jar`: This includes the JUnit library so that your test code can find the JUnit classes (like Assertions and Test annotations).
-- `src/packagename/MyMathMethodTest.java`: The source file containing your unit tests.
+- `src/packagename/MyMathTest.java`: The source file containing your unit tests.
 
 ####  Running the tests using JUnit:
 ```
-java -jar lib/junit-platform-console-standalone-1.7.0-M1.jar --class-path bin -c packagename.MyMathMethodTest
+java -jar lib/junit-platform-console-standalone-1.7.0-M1.jar --class-path bin -c packagename.MyMathTest
 ````
 - `-jar lib/junit-platform-console-standalone-1.7.0-M1.jar`: This runs the JUnit console launcher, which can run your test classes.
 - `--class-path bin`: Specifies the location of your compiled class files (both the main class and test class should be here).
-- `-c packagename.MyMathMethodTest`: Specifies the fully qualified name of your test class to be executed.
+- `-c packagename.MyMathTest`: Specifies the fully qualified name of your test class to be executed.
 
 
 <br><br>
@@ -119,12 +119,12 @@ When naming tests, the goal is to make test names clear and descriptive so that 
 ```java
 @Test
 public void add_zeroAndPositiveNumber_returnsSameNumber() {
-    assertEquals(5, MyMathMethod.add(5, 0));
+    assertEquals(5, MyMath.add(5, 0));
 }
 
 @Test
 public void subtract_largerFromSmaller_returnsNegative() {
-    assertEquals(-2, MyMathMethod.subtract(3, 5));
+    assertEquals(-2, MyMath.subtract(3, 5));
 }
 ```
 
@@ -138,12 +138,12 @@ If you’re following a camelCase style for test names, you can also break the n
 ```java
 @Test
 public void add_twoPositiveNumbers_returnsSum() {
-    assertEquals(7, MyMathMethod.add(3, 4));
+    assertEquals(7, MyMath.add(3, 4));
 }
 
 @Test
 public void subtract_negativeAndPositive_returnsCorrectResult() {
-    assertEquals(-3, MyMathMethod.subtract(-1, 2));
+    assertEquals(-3, MyMath.subtract(-1, 2));
 }
 ```
 
