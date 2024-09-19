@@ -72,6 +72,8 @@ public class MyMathMethodTest {
 - `public void shouldReturnSum_whenAddingTwoNumbers()`: Descriptive method name incorporating what the method under test is supposed to do, and the condition under which the test is being executed. This makes the test more readable and self-documenting.
 - `assertEquals(expected, actual)`: This assertion method checks whether the two arguments (`expected` and `actual`) are equal. If they are not, the test fails.
 
+<br><br>
+
 ## Running Tests
 When properly set up with the recommended extensions (including Test Runner for Java), Visual Studio Code should automatically detect and enable the testing environment.
 
