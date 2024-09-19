@@ -44,11 +44,9 @@ In white-box testing:
 
 <br><br>
 
-## Testing using JUnit
+## Testing Using JUnit
 
 JUnit is a widely-used testing framework in Java that allows developers to write and run unit tests to verify the correctness of individual components (usually methods) in isolation. It follows the principles of Test-Driven Development (TDD), where tests are written before or alongside the code, ensuring that each piece of functionality is thoroughly tested.
-
-## Example of basic usage
 
 ### Installation and setup
 - Install JUnit. This repo template already has the library file under `lib/junit-platform-console-standalone-1.7.0-M1.jar`.
@@ -74,7 +72,7 @@ public class MyMathMethodTest {
 - `public void shouldReturnSum_whenAddingTwoNumbers()`: Descriptive method name incorporating what the method under test is supposed to do, and the condition under which the test is being executed. This makes the test more readable and self-documenting.
 - `assertEquals(expected, actual)`: This assertion method checks whether the two arguments (`expected` and `actual`) are equal. If they are not, the test fails.
 
-## Running tests
+## Running Tests
 When properly set up with the recommended extensions (including Test Runner for Java), Visual Studio Code should automatically detect and enable the testing environment.
 
 Run the tests directly within the IDE, or command line equivalent such as:
